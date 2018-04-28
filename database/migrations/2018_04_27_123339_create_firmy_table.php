@@ -16,7 +16,7 @@ class CreateFirmyTable extends Migration
         Schema::create('firmy', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nazwa_firmy');
-            $table->intiger('nip');
+            $table->integer('nip');
             $table->string('miejscowosc');
             $table->string('kod_pocztowy');
             $table->string('wojewodztwo');

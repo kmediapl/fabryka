@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUslugiTable extends Migration
+class CreateWojewodztwaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateUslugiTable extends Migration
      */
     public function up()
     {
-        Schema::create('uslugi', function (Blueprint $table) {
+        Schema::create('wojewodztwa', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nazwa_usługi');
-            $table->date('data_fiskalizacji');
-            $table->integer('kasa_id');
-           
+            $table->string('nazwa');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateUslugiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('uslugi');
+        Schema::dropIfExists('wojewodztwa');
     }
 }

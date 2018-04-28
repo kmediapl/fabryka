@@ -18,9 +18,7 @@ class CreateKasyTable extends Migration
             $table->string('nazwa_kasy');
             $table->string('nr_fabryczny');
             $table->string('nr_unikatowy');
-            $table->intiger('typ_kasy_id');
-            $table->string('nazwa_kasy');
-            $table->string('nazwa_kasy');
+            $table->integer('firma_id');
             $table->timestamps();
         });
     }
