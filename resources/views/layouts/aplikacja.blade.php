@@ -42,7 +42,7 @@
         
         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
             for="demo-menu-lower-right">
-          <li class="mdl-menu__item">Wszystkie firmy</li>
+            <a href="/"><li class="mdl-menu__item">Wszystkie firmy</li></a>
           <li class="mdl-menu__item">Najblisze przeglądy</li>
           <li class="mdl-menu__item">Przeglądy wg miast</li>
           <li class="mdl-menu__item">Przeglądy 30 dni</li>

@@ -21,11 +21,17 @@ class UslugiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id_kasa)
     {
-        //
+        $nazwakasy = \App\Kasa::find($id_kasa);
+        $firma = $nazwakasy->firma;
+        return view('uslugi.dodaj',['kasa'=>$id_kasa,'nazwa'=>$nazwakasy, 'firma'=>$firma]);
     }
-
+    public function fiskalizujform($id_kasa)
+    {
+        $nazwakasy = \App\Kasa::find($id_kasa);
+        return view('uslugi.fiskalizuj',['kasa'=>$id_kasa,'nazwa'=>$nazwakasy]);
+    }
     /**
      * Store a newly created resource in storage.
      *

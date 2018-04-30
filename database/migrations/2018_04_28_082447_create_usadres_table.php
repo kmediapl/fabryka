@@ -16,7 +16,7 @@ class CreateUsadresTable extends Migration
         Schema::create('usadres', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nazwa_us');
-            $table->string('miejscowaość');
+           
             $table->timestamps();
         });
     }

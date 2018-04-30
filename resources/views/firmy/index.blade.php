@@ -27,7 +27,7 @@
  
 @foreach ($firmy as $firma)
 <tr>
-   <td><a href="firma/{{$firma['id']}}">{{$firma['nazwa_firmy']}}</a></td><td>{{$firma['miejscowosc']}}</td><td>{{$firma['ulica']}}</td>
+   <td><a href="firmy/{{$firma['id']}}">{{$firma['nazwa_firmy']}}</a></td><td>{{$firma['miejscowosc']}}</td><td>{{$firma['ulica']}}</td>
    <td>
 
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">

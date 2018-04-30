@@ -16,9 +16,9 @@ class CreateUslugiTable extends Migration
         Schema::create('uslugi', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nazwa_usługi');
-            $table->date('data_fiskalizacji');
-            $table->integer('kasa_id');
-           
+            $table->date('data');
+            $table->boolean('czy_wykonane');
+            $table->integer('kasa_id'); //doribić kto wykonał
             $table->timestamps();
         });
     }

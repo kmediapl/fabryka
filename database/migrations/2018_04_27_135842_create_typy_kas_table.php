@@ -15,7 +15,7 @@ class CreateTypyKasTable extends Migration
     {
         Schema::create('typy_kas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('producent');
+            $table->string('producent')->nullable();
             $table->string('nazwa_kasy');
             $table->timestamps();
         });

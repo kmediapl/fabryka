@@ -3,11 +3,11 @@
 @section('content')
 <div class="container">
 <br>
-    <div class="demo-card-event mdl-card mdl-shadow--2dp firma" style ="  width: 100%;  min-height: 256px; background: #3E4EB8;margin: 0 auto;">
+    <div class="demo-card-event mdl-card mdl-shadow--2dp">
         <div class="mdl-card__title mdl-card--expand">
-          
+        
           <h2>
-           Nazwa firmy:   {{$firma['nazwa_firmy']}}
+            {{$kasa['nazwa_kasy']}}
             </h2>
         
           
@@ -16,38 +16,32 @@
           
          
               <h4>
-                {{$firma['miejscowosc']}}
+               
               </h4>
-         
-
+            
           </div>
         <div class="mdl-card__actions mdl-card--border">
-         <a href="/kasa/dodaj/{{$firma['id']}}">   <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                <i class="material-icons">add</i> Dodaj kasę
-              </button>
+            <a href="/uslugi/fiskalizuj/{{$kasa['id']}}">   <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                <i class="material-icons">check_circle</i> Fiskalizuj kasę
+              </button></a>  
+         <a href="/usluga/dodaj/{{$kasa['id']}}">   <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                <i class="material-icons">add</i> Dodaj usługę
+              </button></a>
         
           <div class="mdl-layout-spacer"></div>
           
         </div>
       </div>
 
-    </br>
-
-
-        @foreach($kasy as $kasa)
-        <div class="demo-card-event mdl-card mdl-shadow--2dp" style ="    min-height: 256px; background: #3E4EB8;">
-                    <h4 style="text-align:center;"><a href="/kasy/{{$kasa['id']}}">{{$kasa['nazwa_kasy']}}</a></h4>
-                    </div>
-        @endforeach
-
-
-
+ 
 </div>
 @endsection
 <style>
-    .firma {
+    .demo-card-event.mdl-card {
       width: 80%;
-    
+      height: 256px;
+      background: #3E4EB8;
+      margin: 0 auto;
     }
     .demo-card-event > .mdl-card__actions {
       border-color: rgba(255, 255, 255, 0.2);

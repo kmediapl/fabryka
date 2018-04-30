@@ -16,8 +16,17 @@ class CreateKasyTable extends Migration
         Schema::create('kasy', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nazwa_kasy');
-            $table->string('nr_fabryczny');
-            $table->string('nr_unikatowy');
+            $table->string('nr_fabryczny')->nullable();
+            $table->string('nr_unikatowy')->nullable();
+            $table->string('nazwa_lok')->nullable();
+            $table->string('miejscowosc_lok')->nullable();
+            $table->string('ulica_lok')->nullable();
+            $table->string('typ_kasy')->nullable();
+            $table->string('serwisant')->nullable();
+            $table->string('adres_producenta')->nullable();
+            $table->string('kod_lok')->nullable();
+            $table->string('poczta_lok')->nullable();
+            $table->boolean('czy_aktywna')->nullable(); //dodać upload plików
             $table->integer('firma_id');
             $table->timestamps();
         });

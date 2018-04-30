@@ -47,8 +47,9 @@ class FirmyController extends Controller
      */
     public function show($id)
     {
+        $kasy = \App\Firma::find($id)->kasy;
         $firma = \App\Firma::find($id);
-        return view('firmy.dane',['firma'=>$firma]);
+        return view('firmy.dane',['firma'=>$firma,'kasy'=>$kasy]);
     }
 
     /**

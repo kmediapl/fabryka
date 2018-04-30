@@ -15,8 +15,8 @@ class CreateSerwisanciTable extends Migration
     {
         Schema::create('serwisanci', function (Blueprint $table) {
             $table->increments('id');
-            $table->string ('imie');
-            $table->string ('nazwisko');
+            $table->string ('nazwa_serwisanta');
+            
             $table->timestamps();
         });
     }
