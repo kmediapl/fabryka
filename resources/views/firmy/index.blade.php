@@ -13,7 +13,13 @@
           
           </div>
 
-          <div class="mdl-cell mdl-cell--12-col mdl-color--white mdl-shadow--2dp">     
+          <div class="mdl-cell mdl-cell--12-col mdl-color--white mdl-shadow--2dp">  
+         <div class="mdl-tooltip mdl-tooltip--large" for="addfirm">
+DODAJ FIRMĘ
+</div><a href="firma/dodaj">
+          <button id="addfirm" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+  <i class="material-icons">add</i>
+</button>   </a> 
         <table class="mdl-data-table mdl-js-data-table  " style="width:100%; ">
                 <thead>
                   <tr>
@@ -31,10 +37,10 @@
    <td>
 
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                Edytuj firmę
+        <i class="material-icons">mode_edit</i>      Edytuj firmę
               </button>
              <a href="kasa/dodaj/{{$firma['id']}}"> <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-                   Dodaj kasę
+             <i class="material-icons">add_box</i> Dodaj kasę
                   </button></a>
    </td>
 </tr>

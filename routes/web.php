@@ -12,6 +12,7 @@
 */
 Auth::routes();
 Route::get('/', 'FirmyController@index');
+Route::get('/firmy', 'FirmyController@index');
 Route::get('/firmy/{id}', 'FirmyController@show');
 Route::post('/firmy', 'FirmyController@store');
 Route::get('/firma/dodaj', 'FirmyController@create');

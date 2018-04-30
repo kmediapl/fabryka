@@ -3,24 +3,25 @@
 @section('content')
 <div class="container">
 <br>
-    <div class="demo-card-event mdl-card mdl-shadow--2dp firma" style ="  width: 100%;  min-height: 256px; background: #3E4EB8;margin: 0 auto;">
-        <div class="mdl-card__title mdl-card--expand">
+    <div class="" style ="  width: 100%;  min-height: 256px; margin: 0 auto;">
+       
           
-          <h2>
-           Nazwa firmy:   {{$firma['nazwa_firmy']}}
-            </h2>
-        
+          <h3>
+           Nazwa firmy:   {{$firma['nazwa_firmy']}} 
+            </h3>
+    
           
-        </div>
-        <div class="mdl-card__title mdl-card--expand">
+        <h5>NIP:{{$firma['nip']}} </h5>
+         
+  
           
          
-              <h4>
-                {{$firma['miejscowosc']}}
+              <h4>Adres:<br>
+              {{$firma['kod_pocztowy']}},   {{$firma['miejscowosc']}}, {{$firma['ulica']}}, {{$firma['nr_domu']}}, {{$firma['nr_lokalu']}}
               </h4>
          
 
-          </div>
+     
         <div class="mdl-card__actions mdl-card--border">
          <a href="/kasa/dodaj/{{$firma['id']}}">   <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                 <i class="material-icons">add</i> Dodaj kasę
