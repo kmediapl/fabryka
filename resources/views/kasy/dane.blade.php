@@ -6,8 +6,8 @@
     <div class="demo-card-event mdl-card mdl-shadow--2dp">
         <div class="mdl-card__title mdl-card--expand">
         
-          <h2>
-            {{$kasa['nazwa_kasy']}}
+          <h2 class="container mdl-ca">
+            {{$kasa['nazwa_kasy']}}{{$dzien}}
             </h2>
         
           

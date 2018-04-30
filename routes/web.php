@@ -23,6 +23,7 @@ Route::get('/kasy', 'KasyController@index');
 Route::get('/kasy/{id}', 'KasyController@show')->name('kasy');
 Route::get('/kasa/dodaj/{id_firma}', 'KasyController@create');
 Route::post('/kasy', 'KasyController@store');
+Route::get('/kasa/zgloszenie', 'KasyController@zgloszenie');
 
 Route::post('/uslugi', 'UslugiController@store');
 Route::get('/usluga/dodaj/{id_kasa}', 'UslugiController@create');

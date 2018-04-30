@@ -7,7 +7,7 @@
 <div class="karta mdl-shadow--2dp" style="padding:20px;width: 80%;  min-height: 256px; margin: 0 auto;">
 <h4>Dodaj kasę dla firmy ::
   
-  
+
   
   {{$nazwa['nazwa_firmy']}} </h4>
     {!! Form::open(['url' => 'kasy',  'method' => 'post']) !!}

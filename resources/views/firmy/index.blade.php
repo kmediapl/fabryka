@@ -48,6 +48,7 @@ DODAJ FIRMĘ
    
 </tbody>
 </table>
+{{DB::table('firmy')->where('nazwa_firmy', 'like','%Ray%' )->get()}}
           </div>
 @endsection
 

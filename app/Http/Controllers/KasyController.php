@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Firma;
 use App\Kasa;
+use Carbon\Carbon;
+use PDF;
 class KasyController extends Controller
 {
-    public function __construct()
-{
-    $this->middleware('auth');
-}
+//     public function __construct()
+// {
+//     $this->middleware('auth');
+// }
     /**
      * Display a listing of the resource.
      *
@@ -56,9 +58,15 @@ class KasyController extends Controller
      */
     public function show($id)
     {
-         $kasa = \App\Kasa::find($id);
        
-        return view('kasy.dane',['kasa'=>$kasa]);
+        $current = Carbon::now();
+       $dzien = $current->addDays(30);
+        $today = Carbon::today();
+       
+       
+        $kasa = \App\Kasa::find($id);
+       
+        return view('kasy.dane',['kasa'=>$kasa, 'dzien'=>$dzien]);
     }
 
     /**
@@ -95,6 +103,18 @@ class KasyController extends Controller
         //
     }
     public function nadchodzacefiskalizacje() {
+
         $nadchodzacefiskalizacje = 1;
+        $current = Carbon::now();
+        $current->addDays(30);
+        $today = Carbon::today();
+    }
+    public function zgloszenie (){
+        $pdf11 = PDF::loadView('wydruki.zgloszenie');
+        $pdf11->setPaper('A4', 'landscape');
+        $pdf11->stream('invoice1.pdf');
+      
+        return $pdf11->download('invoice1.pdf');
+        
     }
 }
