@@ -11,6 +11,12 @@
   
   {{$nazwa['nazwa_firmy']}} </h4>
     {!! Form::open(['url' => 'kasy',  'method' => 'post']) !!}
+<div style="width:20%;float:right;">
+    <label>Czy aktywna</label><label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="czy_aktywna">
+        <input type="checkbox" id="czy_aktywna" class="mdl-switch__input" checked>
+        <span class="mdl-switch__label"></span>
+      </label>
+</div>
 <input type="hidden" value="{{$firma}}" name="firma_id">
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input class="mdl-textfield__input" type="text" id="nazwa_kasy" name="nazwa_kasy">
@@ -44,7 +50,24 @@
                       <input class="mdl-textfield__input" type="text" id="poczta_lok" name="poczta_lok">
                       <label class="mdl-textfield__label" for="poczta_lok">Poczta lokalizacji</label>
                     </div><br>
-               
+                    <label>Serwisant</label><br>
+                    <select class="" id="serwisant" style="width:300px;">
+                        @foreach ($serwisanci as $udane)
+                      <option value=" {{$udane->nazwa_serwisanta}}"  >
+                          {{$udane->nazwa_serwisanta}}
+                      </option>
+                      @endforeach
+                    </select><br>
+                    <label>Urząd skarbowy</label><br>
+                    <select class="" id="us_id" style="width:300px;">
+                        @foreach ($us as $udane)
+                      <option value="{{$udane->id}}"  >
+                          {{$udane->nazwa_us}}
+                      </option>
+                      @endforeach
+                    </select><br><br>
+              
+                    <br>
             
           <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
               Dodaj kasę
