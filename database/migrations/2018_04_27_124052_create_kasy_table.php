@@ -26,6 +26,7 @@ class CreateKasyTable extends Migration
             $table->string('adres_producenta')->nullable();
             $table->string('kod_lok')->nullable();
             $table->string('poczta_lok')->nullable();
+            $table->integer('us_id')->nullable();
             $table->boolean('czy_aktywna')->nullable(); //dodać upload plików
             $table->integer('firma_id');
             $table->timestamps();

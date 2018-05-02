@@ -24,9 +24,12 @@ Route::get('/kasy/{id}', 'KasyController@show')->name('kasy');
 Route::get('/kasa/dodaj/{id_firma}', 'KasyController@create');
 Route::post('/kasy', 'KasyController@store');
 Route::get('/kasa/zgloszenie', 'KasyController@zgloszenie');
+Route::get('/kasa/zgloszenieserwisu/{idkasy}', 'KasyController@zgloszenieserwisu');
 
 Route::post('/uslugi', 'UslugiController@store');
 Route::get('/usluga/dodaj/{id_kasa}', 'UslugiController@create');
 Route::get('/uslugi/fiskalizuj/{id_kasa}', 'UslugiController@fiskalizujform');
 Route::post('/uslugi/fiskalizuj', 'UslugiController@fiskalizuj');
 
+
+Route::get('/us', 'KasyController@index');
