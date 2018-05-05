@@ -13,7 +13,7 @@
     {!! Form::open(['url' => 'kasy',  'method' => 'post']) !!}
 <div style="width:20%;float:right;">
     <label>Czy aktywna</label><label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="czy_aktywna">
-        <input type="checkbox" id="czy_aktywna" class="mdl-switch__input" checked>
+        <input type="checkbox" id="czy_aktywna" class="mdl-switch__input"  value="1" name="czy_aktywna" checked>
         <span class="mdl-switch__label"></span>
       </label>
 </div>
@@ -32,7 +32,7 @@
           </div><br>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input class="mdl-textfield__input" type="text" id="nazwa_lok" name="nazwa_lok">
-              <label class="mdl-textfield__label" for="nazwa_lok">Nazwa okalizacji</label>
+              <label class="mdl-textfield__label" for="nazwa_lok">Nazwa lokalizacji</label>
             </div><br>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input class="mdl-textfield__input" type="text" id="miejscowosc_lok" name="miejscowosc_lok">
@@ -50,22 +50,32 @@
                       <input class="mdl-textfield__input" type="text" id="poczta_lok" name="poczta_lok">
                       <label class="mdl-textfield__label" for="poczta_lok">Poczta lokalizacji</label>
                     </div><br>
+                    <label>Nazwa kasy</label><br>
+                    <select class="" id="typ_kasy" style="width:300px;" name="typ_kasy">
+                        @foreach ($typkas as $udane)
+                      <option value=" {{$udane->id}}"  >
+                          {{$udane->nazwa_kasy}}
+                      </option>
+                      @endforeach
+                    </select><br>
+                    <label>Urząd skarbowy</label><br>
+                    <select class="" id="us_id" style="width:300px;" name="us_id">
+                        @foreach ($us as $udane)
+                      <option value="{{$udane->id}}"  >
+                          {{$udane->nazwa_us}}
+                      </option>
+                      @endforeach
+                    </select><br>
                     <label>Serwisant</label><br>
-                    <select class="" id="serwisant" style="width:300px;">
+                    <select class="" id="serwisant" style="width:300px;" name="serwisant">
                         @foreach ($serwisanci as $udane)
                       <option value=" {{$udane->nazwa_serwisanta}}"  >
                           {{$udane->nazwa_serwisanta}}
                       </option>
                       @endforeach
                     </select><br>
-                    <label>Urząd skarbowy</label><br>
-                    <select class="" id="us_id" style="width:300px;">
-                        @foreach ($us as $udane)
-                      <option value="{{$udane->id}}"  >
-                          {{$udane->nazwa_us}}
-                      </option>
-                      @endforeach
-                    </select><br><br>
+                    
+                    <br>
               
                     <br>
             

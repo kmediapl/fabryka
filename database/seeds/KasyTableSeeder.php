@@ -6,11 +6,11 @@ class KasyTableSeeder extends CsvSeeder {
 	public function __construct()
 	{
         $this->table = 'typy_kas';
-        $this->csv_delimiter = '|';
-        $this->filename = base_path().'/database/seeds/csvp/kasy.csv';
+        $this->csv_delimiter = ',';
+        $this->filename = base_path().'/database/seeds/csvp/typy_kas.csv';
         $this->mapping = [
-            1 => 'nazwa_kasy',
-            2 => 'producent',
+            2 => 'nazwa_kasy',
+            1 => 'producent',
           
         ];
 	}

@@ -1,4 +1,4 @@
-@extends('layouts.aplikacja')
+@extends('layouts.aplikacja2')
 
 @section('content')
 <div class="container">
@@ -26,20 +26,25 @@
          <a href="/kasa/dodaj/{{$firma['id']}}">   <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                 <i class="material-icons">add</i> Dodaj kasę
               </button>
-        
+              <button class="negative ui button">Negative Button</button>
           <div class="mdl-layout-spacer"></div>
           
         </div>
       </div>
 
     </br>
-
-
+    <div class="mdl-grid">
+ 
         @foreach($kasy as $kasa)
+        <div class="mdl-cell mdl-cell--4-col">
         <div class="demo-card-event mdl-card mdl-shadow--2dp" style ="    min-height: 256px; background: #3E4EB8;">
                     <h4 style="text-align:center;"><a href="/kasy/{{$kasa['id']}}">{{$kasa['nazwa_kasy']}}</a></h4>
-                    </div>
+                    </div>  </div>
         @endforeach
+
+      </div>
+
+
 
 
 

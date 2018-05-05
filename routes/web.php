@@ -13,7 +13,7 @@
 Auth::routes();
 Route::get('/', 'FirmyController@index');
 Route::get('/firmy', 'FirmyController@index');
-Route::get('/firmy/{id}', 'FirmyController@show');
+Route::get('/firmy/{id}', 'FirmyController@show')->name('firmy');
 Route::post('/firmy', 'FirmyController@store');
 Route::get('/firma/dodaj', 'FirmyController@create');
 
@@ -29,7 +29,7 @@ Route::get('/kasa/zgloszenieserwisu/{idkasy}', 'KasyController@zgloszenieserwisu
 Route::post('/uslugi', 'UslugiController@store');
 Route::get('/usluga/dodaj/{id_kasa}', 'UslugiController@create');
 Route::get('/uslugi/fiskalizuj/{id_kasa}', 'UslugiController@fiskalizujform');
-Route::post('/uslugi/fiskalizuj', 'UslugiController@fiskalizuj');
+Route::post('/uslugi/fiskalizuj/{id}', 'UslugiController@fiskalizuj');
 
 
 Route::get('/us', 'KasyController@index');

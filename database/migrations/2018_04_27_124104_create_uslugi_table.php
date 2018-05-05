@@ -16,8 +16,9 @@ class CreateUslugiTable extends Migration
         Schema::create('uslugi', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nazwa_usługi');
-            $table->date('data');
-            $table->boolean('czy_wykonane');
+            $table->date('data')->nullable();
+            $table->boolean('czy_wykonane')->nullable();
+            $table->string('serwisant')->nullable();
             $table->integer('kasa_id'); //doribić kto wykonał
             $table->timestamps();
         });

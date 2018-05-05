@@ -7,7 +7,7 @@ class WojTableSeeder extends CsvSeeder {
 	{
         $this->table = 'wojewodztwa';
         $this->csv_delimiter = ',';
-		$this->filename = base_path().'/database/seeds/csvp/woj.csv';
+		$this->filename = base_path().'/database/seeds/csvp/wojewodztwa.csv';
 	}
 
 	public function run()

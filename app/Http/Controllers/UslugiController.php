@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Http\Controllers\Session;
 
 class UslugiController extends Controller
 {
@@ -30,7 +31,33 @@ class UslugiController extends Controller
     public function fiskalizujform($id_kasa)
     {
         $nazwakasy = \App\Kasa::find($id_kasa);
-        return view('uslugi.fiskalizuj',['kasa'=>$id_kasa,'nazwa'=>$nazwakasy]);
+        $serwisanci = \App\Serwisant::all();
+        return view('uslugi.fiskalizuj',['kasa'=>$id_kasa,'nazwa'=>$nazwakasy,'serwisanci'=>$serwisanci]);
+    }
+    public function fiskalizuj(Request $request)
+    {
+        $id_kasa=$request->kasa_id;
+        $nazwakasy = \App\Kasa::find($id_kasa);
+        
+        if(!\App\Usluga::find($id_kasa)) {
+           
+            $usluga = new \App\Usluga;
+            $usluga->kasa_id=$request->kasa_id;
+            $usluga->nazwa_usługi ='Fiskalizacja';
+            $usluga->czy_wykonane=1;
+            $usluga->serwisant=$request->serwisant;
+            $usluga->save();
+            return redirect()->route('kasy',$id_kasa);
+        }
+        else {
+            flash('Kasa została juz zfiskalizowana');
+
+            return redirect()->route('kasy',$id_kasa);
+        }
+
+
+
+        // return view('kasa.show',['kasa'=>$id_kasa]);
     }
     /**
      * Store a newly created resource in storage.

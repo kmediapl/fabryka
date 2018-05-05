@@ -6,10 +6,10 @@ class SerwisanciTableSeeder extends CsvSeeder {
 	public function __construct()
 	{
         $this->table = 'serwisanci';
-        $this->csv_delimiter = '|';
-        $this->filename = base_path().'/database/seeds/csvp/serwis.csv';
+        $this->csv_delimiter = ',';
+        $this->filename = base_path().'/database/seeds/csvp/serwisanci.csv';
         $this->mapping = [
-            0 => 'nazwa_serwisanta',
+            1 => 'nazwa_serwisanta',
           
           
         ];

@@ -21,7 +21,7 @@ class KasyController extends Controller
      */
     public function index()
     {
-   //
+        return view('test');
     }
 
     /**
@@ -33,10 +33,15 @@ class KasyController extends Controller
     {
         // $us = \DB::table('usadres')->get();  
         $us = \App\Urzadskarbowy::all();
+        $typkas = \App\Typykas::all();
         $serwisanci = \App\Serwisant::all();
+        // $uslugi = \App\Uslugi::all();
         // $us->toArray();
         $nazwafirmy = \App\Firma::find($id_firma);
-        return view('kasy.dodaj',['firma'=>$id_firma,'nazwa'=>$nazwafirmy,'us'=>$us,'serwisanci'=>$serwisanci]);
+        return view('kasy.dodaj',['firma'=>$id_firma,'nazwa'=>$nazwafirmy,'us'=>$us,
+        'serwisanci'=>$serwisanci,
+        'typkas'=>$typkas
+        ]);
         // return view('kasy.dodaj',['us'=>$us]);
     }
 
@@ -54,16 +59,18 @@ class KasyController extends Controller
         $obiekt->firma_id = $request->firma_id;
         $obiekt->nr_fabryczny = $request->nr_fabryczny;
         $obiekt->nr_unikatowy = $request->nr_unikatowy;
+        $obiekt->nazwa_lok = $request->nazwa_lok;
         $obiekt->miejscowosc_lok = $request->miejscowosc_lok;
         $obiekt->ulica_lok = $request->ulica_lok;
         $obiekt->typ_kasy = $request->typ_kasy;
-        $obiekt->serwisant = $request->serwisant;
-        $obiekt->adres_producenta = $request->adres_producenta;
+        $obiekt->serwisant = $request->serwisant;        
         $obiekt->kod_lok = $request->kod_lok;
+        $obiekt->us_id = $request->us_id;
         $obiekt->poczta_lok = $request->poczta_lok;
         $obiekt->czy_aktywna = $request->czy_aktywna;
       
         $obiekt->save();
+        flash('Kasa została dodana');
         return redirect()->route('kasy',$obiekt->id);
     }
 
