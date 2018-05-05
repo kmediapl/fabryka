@@ -149,8 +149,6 @@ return [
         Collective\Html\HtmlServiceProvider::class,
 <<<<<<< HEAD
         Barryvdh\DomPDF\ServiceProvider::class,
-=======
->>>>>>> da9d00459789413ca9edfbbd8dd89e54b9574add
         niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
 
         /*
@@ -216,11 +214,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
       'Html' => Collective\Html\HtmlFacade::class,
-<<<<<<< HEAD
-      'PDF' => niklasravnsborg\LaravelPdf\Facades\Pdf::class
-=======
       'PDF' => niklasravnsborg\LaravelPdf\Facades\Pdf::class,
->>>>>>> da9d00459789413ca9edfbbd8dd89e54b9574add
+
 
     ],
 
