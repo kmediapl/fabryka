@@ -1,39 +1,44 @@
-@extends('layouts.aplikacja')
-
+@extends('layouts.aplikacja2')
 @section('content')
 <div class="container">
-  <br>
-  <div style="background:#fff"></div>
+    <div class="ui segment">
 
-<div class="karta mdl-shadow--2dp" style="padding:20px;">
+
 <h1>Usługi dla kasy ::: {{$nazwa['nazwa_kasy']}} firmy {{$firma['nazwa_firmy']}}</h1>
-    {!! Form::open(['url' => 'firmy',  'method' => 'post']) !!}
-    <div class="mdl-textfield mdl-js-textfield">
-        <input class="mdl-textfield__input" type="text" id="sample1">
-        <label class="mdl-textfield__label" for="sample1">Nazwa usługi wpisanej do książki serwisowej: </label>
-      </div><br>
-      <div class="mdl-textfield mdl-js-textfield">
-          <input class="mdl-textfield__input date" type="text" id="sample1">
-          <label class="mdl-textfield__label" for="sample1">Data wykonania</label>
-        </div><br>
-        <label>Czy wykonane?</label>
-        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
-            <input type="checkbox" id="switch-1" class="mdl-switch__input" checked>
-            <span class="mdl-switch__label"></span>
-          </label><br>
-          <button id="but1" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-            Dodaj usługę
-            </button> 
+    {!! Form::open(['url' => 'firmy',  'method' => 'post', 'class'=>'ui form']) !!}
+    <div class="ui divider"></div>
+
+     
+      <div >
+          <label class="" for="nazwa_uslugi">Nazwa usługi wpisanej do książki serwisowej: </label>
+          <input type="text" placeholder="Podaj nazwę usługi" id="nazwa_uslugi">
+        </div>
+
+        <div >
+            <label class="" for="nazwa_uslugi">Data wykonania: </label>
+            <input type="text" placeholder="Podaj datę..." id="data_wykonania">
+          </div>
+<br>
+          <div class="inline field">
+              <div class="ui toggle checkbox">
+                <input type="checkbox" tabindex="0" checked value="1">
+                <label>Czy wykonana</label>
+              </div>
+            </div>
+   
+          <button class="ui pink button">  <i class="add icon"></i>     Dodaj usługę</button>
+
     {!! Form::close() !!}
 
 </div>
 </div>
+
+<script>
+$('#data_wykonania').calendar();
+
+</script>
 @endsection
-<style>
-  .karta {
-    background: #fff;
-  }
-  </style>
+
 
 
 

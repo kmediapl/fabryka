@@ -143,12 +143,9 @@ class KasyController extends Controller
         return $pdf11->download('invoice1.pdf');
         
     }
-    public function zgloszenieserwisu (){
-        $data = [
-            'foo' => 'bar'
-        ];
-
-        $pdf11 = PDF::loadView('wydruki.zgloszenieserwisu', $data);
+    public function zgloszenieserwisu ($idkasy){
+        $kasa = Kasa::find($idkasy);
+        $pdf11 = PDF::loadView('wydruki.zgloszenieserwisu', $kasa);
         // $pdf11->setPaper('A4', 'landscape');
         $pdf11->stream('invoice1.pdf');
       

@@ -20,7 +20,7 @@ class FirmyController extends Controller
      */
     public function index()
     {
-        $firmy = \App\Firma::all();
+        $firmy = \App\Firma::paginate(15);
         return view('firmy.index',['firmy'=>$firmy]);
     }
 

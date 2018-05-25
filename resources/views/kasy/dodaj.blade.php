@@ -1,97 +1,145 @@
-@extends('layouts.aplikacja')
+@extends('layouts.aplikacja2')
 
 @section('content')
 <div class="container">
-  <br>
-<div style="background:#fff"></div>
-<div class="karta mdl-shadow--2dp" style="padding:20px;width: 80%;  min-height: 256px; margin: 0 auto;">
-<h4>Dodaj kasę dla firmy ::
+    <div class="ui segment">
+
+
+<h2>Dodaj kasę dla firmy ::
   
 
   
-  {{$nazwa['nazwa_firmy']}} </h4>
-    {!! Form::open(['url' => 'kasy',  'method' => 'post']) !!}
-<div style="width:20%;float:right;">
-    <label>Czy aktywna</label><label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="czy_aktywna">
-        <input type="checkbox" id="czy_aktywna" class="mdl-switch__input"  value="1" name="czy_aktywna" checked>
-        <span class="mdl-switch__label"></span>
-      </label>
-</div>
+  {{$nazwa['nazwa_firmy']}} </h2>
+  <div class="ui divider"></div>
+    {!! Form::open(['url' => 'kasy',  'method' => 'post', 'class'=>'ui form']) !!}
+
+
+      <div class="inline field">
+          <div class="ui toggle checkbox">
+           
+            <input type="checkbox" tabindex="0" checked  value="1" name="czy_aktywna" id="czy_aktywna">
+            <label>Czy aktywna</label>
+          </div>
+        </div>
+
 <input type="hidden" value="{{$firma}}" name="firma_id">
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="nazwa_kasy" name="nazwa_kasy">
-        <label class="mdl-textfield__label" for="nazwa_kasy">Nazwa kasy</label>
-      </div><br>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="nr_fabryczny" name="nr_fabryczny">
-          <label class="mdl-textfield__label" for="nr_fabryczny">Nr fabryczny</label>
-        </div><br>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="nr_unikatowy" name="nr_unikatowy">
-            <label class="mdl-textfield__label" for="nr_unikatowy">Nr unikatowy</label>
-          </div><br>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input class="mdl-textfield__input" type="text" id="nazwa_lok" name="nazwa_lok">
-              <label class="mdl-textfield__label" for="nazwa_lok">Nazwa lokalizacji</label>
-            </div><br>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="miejscowosc_lok" name="miejscowosc_lok">
-                <label class="mdl-textfield__label" for="miejscowosc_lok">Miejscowość lokalizacji</label>
-              </div><br>
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="ulica_lok" name="ulica_lok">
-                  <label class="mdl-textfield__label" for="ulica_lok">Ulica lokalizacji</label>
-                </div><br>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" id="kod_lok" name="kod_lok">
-                    <label class="mdl-textfield__label" for="kod_lok">Kod lokalizacji</label>
+
+    <div class="field">
+        <label  for="nazwa_kasy">Nazwa kasy</label>
+        <input  type="text" id="nazwa_kasy" name="nazwa_kasy">
+       
+      </div>
+      <div class="two fields">
+          <div class="field">
+      <div class="field">
+          <label  for="nr_fabryczny">Nr fabryczny</label>
+          <input  type="text" id="nr_fabryczny" name="nr_fabryczny">
+        
+        </div>  </div>
+        <div class="field">
+        <div class="field">
+            <label  for="nr_unikatowy">Nr unikatowy</label>
+            <input  type="text" id="nr_unikatowy" name="nr_unikatowy">
+           
+          </div>  </div>
+
+      </div>
+
+
+
+
+
+          <div class="field">
+              <label  for="nazwa_lok">Nazwa lokalizacji</label>
+              <input  type="text" id="nazwa_lok" name="nazwa_lok">
+            
+            </div>
+
+            <div class="four fields">
+                <div class="fluid field">
+            <div class="field">
+                <label  for="miejscowosc_lok">Miejscowość lokalizacji</label>
+                <input  type="text" id="miejscowosc_lok" name="miejscowosc_lok">
+                
+              </div>
+            </div>
+              <div class="fluid field">
+              <div class="field">
+                  <label  for="ulica_lok">Ulica lokalizacji</label>
+                  <input  type="text" id="ulica_lok" name="ulica_lok">
+                 
+                </div>
+              </div>
+              <div class="fluid field">
+                  <div class="field">
+                      <label  for="ulica_lok">Numer domu lokalizacji</label>
+                      <input  type="text" id="numerlokalu_lok" name="numerlokalu_lok">
+                     
+                    </div>
+                  </div>
+                  <div class="fluid field">
+                      <div class="field">
+                          <label  for="ulica_lok">Numer lokalu lokalizacji</label>
+                          <input  type="text" id="numerlaka_lok" name="numerdomu_lok">
+                         
+                        </div>
+                      </div>
+                </div>
+
+
+
+                <div class="two fields">
+
+                <div class="field">
+                    <label  for="kod_lok">Kod lokalizacji</label>
+                    <input  type="text" id="kod_lok" name="kod_lok">
+                   
                   </div><br>
-                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                      <input class="mdl-textfield__input" type="text" id="poczta_lok" name="poczta_lok">
-                      <label class="mdl-textfield__label" for="poczta_lok">Poczta lokalizacji</label>
-                    </div><br>
-                    <label>Nazwa kasy</label><br>
+                  <div class="field">
+                      <label  for="poczta_lok">Poczta lokalizacji</label>
+                      <input  type="text" id="poczta_lok" name="poczta_lok">
+                    </div>
+                    </div>
+                    <div class="three fields">
+                        <div class=" field">
+                    <label>Nazwa kasy</label>
                     <select class="" id="typ_kasy" style="width:300px;" name="typ_kasy">
                         @foreach ($typkas as $udane)
                       <option value=" {{$udane->id}}"  >
                           {{$udane->nazwa_kasy}}
                       </option>
                       @endforeach
-                    </select><br>
-                    <label>Urząd skarbowy</label><br>
-                    <select class="" id="us_id" style="width:300px;" name="us_id">
+                    </select></div>
+                    <div class=" field">
+                    <label>Urząd skarbowy</label>
+                    <select class="ui fluid dropdown" id="us_id" style="width:300px;" name="us_id">
                         @foreach ($us as $udane)
                       <option value="{{$udane->id}}"  >
                           {{$udane->nazwa_us}}
                       </option>
                       @endforeach
-                    </select><br>
-                    <label>Serwisant</label><br>
+                    </select></div>
+                    <div class="field">
+                    <label>Serwisant</label>
                     <select class="" id="serwisant" style="width:300px;" name="serwisant">
                         @foreach ($serwisanci as $udane)
                       <option value=" {{$udane->nazwa_serwisanta}}"  >
                           {{$udane->nazwa_serwisanta}}
                       </option>
                       @endforeach
-                    </select><br>
+                    </select>
+                        </div></div>
                     
                     <br>
               
                     <br>
-            
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-              Dodaj kasę
-            </button>
+                    <button class="ui pink button">  <i class="add icon"></i> Dodaj kasę</button>
     {!! Form::close() !!}
 
-</div>
+  </div>
 </div>
 @endsection
-<style>
-  .karta {
-    background: #fff;
-  }
-  </style>
+
 
 
 

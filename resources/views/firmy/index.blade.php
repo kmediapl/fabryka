@@ -1,26 +1,54 @@
-@extends('layouts.aplikacja')
+@extends('layouts.aplikacja2')
 
 @section('content')
 
-       <br>
-       <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--6-col mdl-color--white mdl-shadow--2dp" style="padding:20px;">
-                <h5>Nadchodzące fiskalizacje</h5>
+    
+       <div class="ui container">
+         
+          <div class="ui two column grid">
+              <div class="column">
+                <div class="ui segment">
+                  <h3>Nadchodzące przeglądy +- 30dni</h3>
+                  <div class="ui divider"></div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="ui segment">
+                    <h3>Nadchodzące przeglądy +- 30dni - miasta</h3>
+                    <div class="ui divider"></div>
+                </div>
+              </div>
+         
             </div>
-            <div class="mdl-cell mdl-cell--6-col mdl-color--white mdl-shadow--2dp" style="padding:20px;">
-                    <h5>Nadchodzące fiskalizacje</h5>
+            <div class="ui segment">
+                <h3>Wyszukaj firmę</h3>
+                <div class="ui divider"></div>
+                <div class="ui input">
+                    <input type="text" placeholder="Search...">
+                  </div>
+                  <div class="ui input">
+                      <input type="text" placeholder="Search...">
+                    </div>
+                    <div class="ui animated button" tabindex="0">
+                        <div class="visible content">Szukaj</div>
+                        <div class="hidden content">
+                            <i class="search icon"></i>
+                        </div>
+                      </div>
             </div>
-          
-          </div>
+<br>
+<div class="ui segment">
+<a href="firma/dodaj">
+  <div class="ui animated  pink button" tabindex="0">
+      <div class="visible content">Dodaj firmę</div>
+      <div class="hidden content">
+          <i class="add icon"></i>
+      </div>
+    </div>
 
-          <div class="mdl-cell mdl-cell--12-col mdl-color--white mdl-shadow--2dp">  
-         <div class="mdl-tooltip mdl-tooltip--large" for="addfirm">
-DODAJ FIRMĘ
-</div><a href="firma/dodaj">
-          <button id="addfirm" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-  <i class="material-icons">add</i>
-</button>   </a> 
-        <table class="mdl-data-table mdl-js-data-table  " style="width:100%; ">
+
+ </a> 
+        <table class="ui celled table" style="width:100%; ">
                 <thead>
                   <tr>
                     <th>Nazwa firmy</th>
@@ -36,20 +64,16 @@ DODAJ FIRMĘ
    <td><a href="firmy/{{$firma['id']}}">{{$firma['nazwa_firmy']}}</a></td><td>{{$firma['miejscowosc']}}</td><td>{{$firma['ulica']}}</td>
    <td>
 
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-        <i class="material-icons">mode_edit</i>      Edytuj firmę
-              </button>
-             <a href="kasa/dodaj/{{$firma['id']}}"> <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-             <i class="material-icons">add_box</i> Dodaj kasę
-                  </button></a>
+    <button class="ui pink button">  <i class="edit icon"></i> Edytuj firmę</button>
+             <a href="kasa/dodaj/{{$firma['id']}}"> <button class="ui violet button">  <i class="add icon"></i> Dodaj kasę</button></a>
    </td>
 </tr>
     @endforeach
    
 </tbody>
 </table>
-{{DB::table('firmy')->where('nazwa_firmy', 'like','%Ray%' )->get()}}
-          </div>
+{{ $firmy->links() }}
+          </div>   </div>
 @endsection
 
 

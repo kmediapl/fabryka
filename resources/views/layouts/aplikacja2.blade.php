@@ -20,15 +20,12 @@
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.css" />
+    <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.css" rel="stylesheet" type="text/css" />
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
-    <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.js"></script>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+ 
 </head>
 <body>
     <div id="app">
@@ -39,42 +36,59 @@
                         
                        FABRYKA IT
                       </a>
-                      <a href="#" class="item">Home</a>
+                      <a href="/" class="item"><i class="caret square right outline icon"></i>Wszystkie firmy</a>
                       <div class="ui simple dropdown item">
-                        Dropdown <i class="dropdown icon"></i>
+                          <i class="info circle icon"></i> Słowniki<i class="dropdown icon"></i>
                         <div class="menu">
-                          <a class="item" href="#">Link Item</a>
-                          <a class="item" href="#">Link Item</a>
-                          <div class="divider"></div>
-                          <div class="header">Header Item</div>
-                          <div class="item">
-                            <i class="dropdown icon"></i>
-                            Sub Menu
-                            <div class="menu">
-                              <a class="item" href="#">Link Item</a>
-                              <a class="item" href="#">Link Item</a>
-                            </div>
-                          </div>
-                          <a class="item" href="#">Link Item</a>
+                          <a class="item" href="#">Urzędy skarbowe</a>
+                          <a class="item" href="#">Serwisanci</a>
+                          <a class="item" href="#">Typy kas</a>
+                          
+                          
                         </div>
                       </div>
+                      <a href="/" class="item"><i class="search icon"></i>Wyszukiwanie</a>
+                      <div class="right menu"><a href="/" class="item">Logowanie</a></div>
+                    </div>
+                 
+                  </div>
+                  <br>
+
+                  <br><br>
+
+           
+                    @include('flash::message')  
+                    <div id="zaw" style="min-height:750px;">
+                @yield('content')
+                    </div>
+                <br>
+
+                <br><br>
+              </div>
+              <div class="ui inverted vertical footer segment">
+                  <div class="ui center aligned container">
+                   
+                    <div class="ui inverted section divider"></div>
+                    <p class="ui centered ">FABRYKA IT</p>
+                    <div class="ui horizontal inverted small divided link list">
+                      <a class="item" href="#">Site Map</a>
+                      <a class="item" href="#">Contact Us</a>
+                      <a class="item" href="#">Terms and Conditions</a>
+                      <a class="item" href="#">Privacy Policy</a>
                     </div>
                   </div>
-     
-
-              <div class="page-content">
-                    @include('flash::message')  
-                @yield('content')</div>
-
+                </div>
       
        
             
             
        
-    </div>
+ 
    
-
-    
+                <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.js"></script>
 
     <script>
             $('#flash-overlay-modal').modal();

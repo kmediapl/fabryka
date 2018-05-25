@@ -21,6 +21,8 @@ class CreateKasyTable extends Migration
             $table->string('nazwa_lok')->nullable();
             $table->string('miejscowosc_lok')->nullable();
             $table->string('ulica_lok')->nullable();
+            $table->string('numerdomu_lok')->nullable();
+            $table->string('numerlokalu_lok')->nullable();
             $table->string('typ_kasy')->nullable();
             $table->string('serwisant')->nullable();
             $table->string('adres_producenta')->nullable();
